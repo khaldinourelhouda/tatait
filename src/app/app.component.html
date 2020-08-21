@@ -1,21 +1,159 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!-- Start Navbar -->
+<div class="navbar-area">
+
+<nav class="navbar navbar-expand-md navbar-light">
+  <a class="navbar-brand" [routerLink]="['/acceuil']"> <img src="/assets/img/logo5.png" alt="logo"></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+ 
+    <div id="n1">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['/acceuil']">{{'menu1.item1' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/service']">{{'menu1.item2' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/formation']">{{'menu1.item3' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/carriere']">{{'menu1.item4' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/apropos']">{{'menu1.item5' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/contact']">{{'menu1.item6' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " (click)="ch()" [routerLink]="['/test']">{{'menu1.item7' | translate}}</a>
+      </li>
+     
+    </ul>
+  </div>
+
+    <div id="n2">
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+    <li class="nav-item ">
+      <a class="nav-link" [routerLink]="['/acceuil']">{{'menu2.item1' | translate}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/service']">{{'menu2.item2' | translate}}</a>
+    </li>
+    </ul>
+   </div>
+
+
+    </div>
+  
+ 
+  <select  #langselect (change)="translate.use(langselect.value)">
+    <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{lang}}</option>
+   
+  </select>
+</nav>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- End Navbar -->
+
+
+
 
 <router-outlet></router-outlet>
+
+
+  <!-- Start Footer Area -->
+  <footer class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <div class="logo">
+                        <a href="#"><img src="assets/img/white-logo.png" alt="image"></a>
+                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+                    </div>
+
+                    <ul class="social">
+                        <li><a href="#" target="_blank"><i class="flaticon-facebook-letter-logo"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="flaticon-twitter"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="flaticon-instagram-logo"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="flaticon-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>Services</h3>
+
+                    <ul class="footer-services-list">
+                        <li><a href="#">Product Engineering</a></li>
+                        <li><a href="#">UX/UI Design</a></li>
+                        <li><a href="#">Big Data Analysis</a></li>
+                        <li><a href="#">Desktop Applications</a></li>
+                        <li><a href="#">Mobile Applications</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>Quick Links</h3>
+
+                    <ul class="quick-links-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Applications</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>Contacts</h3>
+
+                    <ul class="footer-contact-list">
+                        <li><span>Address:</span> 2750 Quadra Street Victoria, Canada</li>
+                        <li><span>Email:</span> <a href="#">evolta@gmail.com</a></li>
+                        <li><span>Phone:</span> <a href="#">+44 587 154756</a></li>
+                        <li><span>Fax:</span> <a href="#">+44 785 4578964</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <p>Copyright 2019 <a href="#">Evolta</a>. All Rights Reserved.</p>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle-map"><img src="assets/img/circle-map.png" alt="image"></div>
+
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</footer>
+<!-- End Footer Area -->
+
+
+
+
+
