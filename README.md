@@ -48,6 +48,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ```
 $ npm install @ngx-translate/core@10 @ngx-translate/http-loader@3 rxjs --save
 ```
+
+* install jquery :
+```
+$ npm i @types/jquery
+$ npm i jquery
+```
+
 * import ngx translate to app.module.ps :
 
 ![ngx1](https://user-images.githubusercontent.com/42650742/91036695-15e9eb80-e608-11ea-8459-8cbdbead2a6b.png)
